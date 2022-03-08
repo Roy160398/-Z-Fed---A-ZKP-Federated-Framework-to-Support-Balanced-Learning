@@ -1,49 +1,22 @@
 # MCM PRACTICUM
+### Information
 
-This is a template for MCM practicums.  Please read these instructions carefully.
+| Field               | Value                                                           |
+| ------------------- | --------------------------------------------------------------- |
+| Project Title:      | Enhanced Data Catalog to Support Trustworthy Federated Learning |
+| Student IDs:        | 21264466, 20210611                                              |
+| Student names:      | Stefano Marzo, Royston Pinto                                    |
+| Student emails:     | stefano.marzo2@mail.dcu.ie, royston.pinto2@mail.dcu.ie          |
+| Chosen majors:      | Artificial Intelligence, Data Analytics                         |
+| Supervisor:         | Dr. Rob Brennan                                                 |
+| Date of submission: | 27-01-2022                                                      |
 
-This file is written in
-[markdown](https://guides.github.com/features/mastering-markdown/).  Markdown
-is a suitable format for documents stored in git repositories.
-
-## Instructions
-
-You *must* do the following:
-
-1 - Fork this repo.
-
-2 - There is no need to rename your fork but if you wish to do so please use
-     the format:
-
-     2021-mcm-username
-
-replacing `username` with your School of Computing login name.
-
-For example, if Stephen Blott were to be doing an MCM practicum, he would rename
-his repo as:
-
-     2021-mcm-sblott
+### Practicum Topic
+Development of a data analysis tool integrated into a data governance platform that produces metadata about the fairness of a federated dataset. The metadata created can be used to classify data more accurately by reducing bias related to the presence of minority groups within the dataset. The project, motivated by recent scientific results, aims to implement unfairness quantification as part of the fundamental principles described in the Ethics guidelines for trustworthy AI authored by the High-Level Expert Group on Artificial Intelligence (AI HLEG) on behalf of the European Commission.
+### Research Questions
+- To what extent can we mitigate federated data bias by using data governance systems according to EU guidelines for data ethics and trustworthy AI?
+- To what extent can zero knowledge proof metadata about the proportions of population clusters generated in a federated learning environment can be used to enhance trustworthiness in AI?
 
 
-You should also update the *Project description*.
 
-3 - This directory has two important sub-directories.
 
-- All of your source code should be placed in the `src` sub-directory.
-
-- All of your documentation should be placed in the `docs` sub-directory.
-
-4 - There is further important documentation in the `docs` directory.  Read that next.
-
-When you are have followed all of these instructions and are sure that you
-understand what is expected, you may replace the contents of this file with a
-brief description of your project (two or three paragraphs).
-
-## Additional Resources
-
-- Git [cheat sheet](https://gitlab.computing.dcu.ie/sblott/local-gitlab-documentation/blob/master/cheat-sheet.md)
-- Gitlab [CI environment](https://gitlab.computing.dcu.ie/sblott/docker-ci-environment) and it's [available software](https://gitlab.computing.dcu.ie/sblott/docker-ci-environment/blob/master/Dockerfile)
-- Example projects with CI configured:
-   * [Python](https://gitlab.computing.dcu.ie/sblott/test-project-python)
-   * [Java](https://gitlab.computing.dcu.ie/sblott/test-project-java)
-   * [MySql](https://gitlab.computing.dcu.ie/sblott/test-project-mysql)
