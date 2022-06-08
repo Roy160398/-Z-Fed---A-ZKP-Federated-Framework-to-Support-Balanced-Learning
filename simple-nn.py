@@ -116,7 +116,9 @@ def mse_prime(y_true, y_pred):
 
 
 class Network:
-    def __init__(self):
+    def __init__(self, seed=None):
+        if seed != None:
+            np.random.seed(seed)
         self.layers = []
         self.loss = None
         self.loss_prime = None
@@ -148,9 +150,9 @@ class Network:
 
     # train the network
     def fit(self, x_train, y_train, epochs, learning_rate):
+        #print(f'x: {x_train}, y: {y_train}, epochs: {epochs}, lr: {learning_rate}')
         # sample dimension first
         samples = len(x_train)
-
         # training loop
         for i in range(epochs):
             err = 0
@@ -170,7 +172,7 @@ class Network:
 
             # calculate average error on all samples
             err /= samples
-            #print('epoch %d/%d   error=%f' % (i+1, epochs, err))
+            print('epoch %d/%d   error=%f' % (i+1, epochs, err))
             
     def get_weights(self):
         return [self.layers[i].weights for i in range(0, len(self.layers), 2)]
@@ -178,27 +180,3 @@ class Network:
     def load_weights(self, W):
         for i in range(0, len(W)):
             self.layers[i * 2].weights = W[i] #One FCLayer every 2 layers
-
-
-# In[29]:
-
-
-# training data
-x_train = np.array([[[0]], [[0]], [[1]], [[1]]])
-y_train = np.array([[[0]], [[1]], [[1]], [[0]]])
-
-# network
-net = Network()
-net.add(FCLayer(1, 1))
-net.add(ActivationLayer(tanh_act))
-net.add(FCLayer(1, 1))
-net.add(ActivationLayer(tanh_act))
-
-# train
-net.use(mse, mse_prime)
-net.fit(x_train, y_train, epochs=1000, learning_rate=0.1)
-
-# test
-out = net.predict(x_train)
-print(out)
-
