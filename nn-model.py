@@ -122,6 +122,7 @@ class Network:
         self.layers = []
         self.loss = None
         self.loss_prime = None
+        self.errors = []
 
     # add layer to network
     def add(self, layer):
@@ -172,7 +173,8 @@ class Network:
 
             # calculate average error on all samples
             err /= samples
-            print('epoch %d/%d   error=%f' % (i+1, epochs, err))
+            #print('epoch %d/%d   error=%f' % (i+1, epochs, err))
+            self.errors += [err]
             
     def get_weights(self):
         return [self.layers[i].weights for i in range(0, len(self.layers), 2)]
