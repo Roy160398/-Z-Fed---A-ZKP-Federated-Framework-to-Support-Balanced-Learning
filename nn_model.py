@@ -6,6 +6,7 @@
 
 #https://towardsdatascience.com/math-neural-network-from-scratch-in-python-d6da9f29ce65
 import numpy as np
+from utils import properties as p
 
 
 # In[2]:
@@ -182,3 +183,14 @@ class Network:
     def load_weights(self, W):
         for i in range(0, len(W)):
             self.layers[i * 2].weights = W[i] #One FCLayer every 2 layers
+
+def get_standard_nn(seed):
+    hidden_layer_size = 500
+    net = Network(seed=p['seed'])
+    net.add(FCLayer(p['img_size'] * p['img_size'], hidden_layer_size))
+    net.add(ActivationLayer(tanh_act))
+    net.add(FCLayer(hidden_layer_size, round(p['age_range']() / p['age_bins'])))
+    net.add(ActivationLayer(tanh_act))
+    # setup
+    net.use(mse, mse_prime)
+    return net
