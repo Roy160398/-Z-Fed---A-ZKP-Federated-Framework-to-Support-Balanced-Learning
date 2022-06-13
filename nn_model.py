@@ -188,9 +188,20 @@ def get_standard_nn(seed):
     hidden_layer_size = 500
     net = Network(seed=p['seed'])
     net.add(FCLayer(p['img_size'] * p['img_size'], hidden_layer_size))
-    net.add(ActivationLayer(tanh_act))
+    net.add(ActivationLayer(sigm_act))
     net.add(FCLayer(hidden_layer_size, round(p['age_range']() / p['age_bins'])))
+    net.add(ActivationLayer(sigm_act))
+    # setup
+    net.use(mse, mse_prime)
+    return net
+
+def get_3l_nn(inp=2, hid=2, out=1):
+    net = Network(seed=p['seed'])
+    net.add(FCLayer(inp, hid))
+    net.add(ActivationLayer(tanh_act))
+    net.add(FCLayer(hid, out))
     net.add(ActivationLayer(tanh_act))
     # setup
     net.use(mse, mse_prime)
     return net
+    
