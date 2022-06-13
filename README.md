@@ -1,3 +1,5 @@
+![](src/logo_full_res.png)
+
 # MCM PRACTICUM
 ### Information
 
