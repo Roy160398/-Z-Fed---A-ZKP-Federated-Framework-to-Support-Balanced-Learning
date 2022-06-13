@@ -1,4 +1,4 @@
-![](src/logo_full_res.png)
+<img src="src/logo_full_res.png" alt="Logo" width="200"/>
 
 # MCM PRACTICUM
 ### Information
