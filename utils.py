@@ -13,7 +13,7 @@ properties = {
         1: 'Black',
         2: 'Asian',
         3: 'Indian',
-        4: 'Other'
+        #4: 'Other'
     },
     
     # Gender labels
@@ -152,3 +152,8 @@ def predict_row(df, row_n, model):
     
 def get_rnd_ethnicity():
     return random.choice(list(properties['ETHNICITIES'].values()))
+
+def macro_deviation(ref, vals):
+    refs = [ref] * len(vals)
+    sub = [r_i - v_i for r_i, v_i in zip(refs, vals)]
+    return round(sum(list(map(lambda x : x**2 / (len(vals) - 1), sub)))**(.5), 6)

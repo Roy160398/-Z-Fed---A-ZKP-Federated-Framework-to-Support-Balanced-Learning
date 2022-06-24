@@ -1,6 +1,6 @@
 <img src="src/logo_full_res.png" alt="Logo" width="200"/>
 
-# MCM PRACTICUM
+# MCM PRACTICUM - Z-Fed
 ### Information
 
 | Field               | Value                                                           |
