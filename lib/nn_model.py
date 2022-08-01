@@ -1,17 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-#https://towardsdatascience.com/math-neural-network-from-scratch-in-python-d6da9f29ce65
 import numpy as np
-from utils import *
-from utils import properties as p
+from lib.utils import *
+from lib.utils import properties as p
 import matplotlib.pyplot as plt
-
-
-# In[2]:
 
 
 # Base class
@@ -27,9 +17,6 @@ class Layer:
     # computes dE/dX for a given dE/dY (and update parameters if any)
     def backward_propagation(self, output_error, learning_rate):
         raise NotImplementedError
-
-
-# In[3]:
 
 
 # inherit from base class Layer
@@ -58,9 +45,6 @@ class FCLayer(Layer):
         return input_error
 
 
-# In[4]:
-
-
 # inherit from base class Layer
 class ActivationLayer(Layer):
     def __init__(self, activation_function):
@@ -77,9 +61,6 @@ class ActivationLayer(Layer):
     # learning_rate is not used because there is no "learnable" parameters.
     def backward_propagation(self, output_error, learning_rate):
         return self.activation_prime(self.input) * output_error
-
-
-# In[5]:
 
 
 # activation function and its derivative
@@ -102,9 +83,6 @@ def sigmoid_prime(x):
 
 tanh_act = ActivationFunction(tanh, tanh_prime)
 sigm_act = ActivationFunction(sigmoid, sigmoid_prime)
-
-
-# In[6]:
 
 
 # loss function and its derivative

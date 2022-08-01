@@ -1,7 +1,7 @@
 from sklearn.metrics import confusion_matrix
 import numpy as np
 import pandas as pd
-from utils import properties as p
+from lib.utils import properties as p
 
 def get_confused(y_true, y_pred):
     cm = confusion_matrix(y_true, y_pred, labels=[i for i in range(len(p['bins']()))])
